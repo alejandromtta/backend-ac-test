@@ -11,21 +11,24 @@ datasource db {
   directUrl = env("DB_URL_NON_POOLING") // uses a direct connection
 }
 
-model Client {
-  id Int @id @default(autoincrement())
-  name String
-  document_number Int
-  created_at DateTime @default(now())
-  certified Certified  @relation(fields: [certified_id], references: [id])
-  certified_id Int 
-}
-
 model Certified {
   id Int @id @default(autoincrement())
   id_local String
   level String
   date String
-  clients Client[]
   name_certificate String
   company_name String
+  client Client  @relation(fields: [client_id], references: [id])
+  client_id Int 
+  link String 
 }
+
+model Client {
+  id Int @id @default(autoincrement())
+  name String
+  document_number Int
+  created_at DateTime @default(now())
+  certified Certified[]
+
+}
+
