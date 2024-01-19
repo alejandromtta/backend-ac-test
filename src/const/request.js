@@ -1,4 +1,4 @@
-const GET = "GET";
-const POST = "POST";
-const PUT = "PUT";
-const DELETE = "DELETE";
+export const GET = "GET";
+export const POST = "POST";
+export const PUT = "PUT";
+export const DELETE = "DELETE";
