@@ -1,5 +1,5 @@
 const {get} = require('../../../const/db')
-const handler = async (req, res) =>{
+const handler = (req, res) =>{
   console.log(get())
   if(req.method === 'GET'){
     //  const clients = await  prisma.client.findMany();
