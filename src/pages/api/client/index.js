@@ -1,9 +1,10 @@
 const {get} = require('../../../const/db')
-const handler = (req, res) =>{
-  console.log(get())
+const handler = async (req, res) =>{
+ 
   if(req.method === 'GET'){
     //  const clients = await  prisma.client.findMany();
- return res?.status(200).json('clients')
+    console.log(await get(), 'heyyyyyyyyyy')
+ return res?.status(200).json(await get())
   }
   if(req.method === 'POST'){
     // const newData = await prisma.client.create({
