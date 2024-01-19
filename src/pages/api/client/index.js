@@ -5,8 +5,8 @@ const { PrismaClient } = require("@prisma/client")
 const handler = async (req, res) =>{
   const prisma = new PrismaClient()
   if(req.method === 'GET'){
-     const clients = await  prisma.client.findMany();
- return res?.status(200).json(clients)
+    //  const clients = await  prisma.client.findMany();
+ return res?.status(200).json('clients')
   }
   if(req.method === 'POST'){
     const newData = await prisma.client.create({

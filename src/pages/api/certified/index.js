@@ -1,8 +1,8 @@
 const { PrismaClient } = require("@prisma/client")
 
-//const prisma = new PrismaClient()
 
 const handler = async (req, res) =>{
+  const prisma = new PrismaClient()
   console.log(req.method)
   if(req.method === 'GET'){
     //const certifieds = await  prisma.certified.findMany();
