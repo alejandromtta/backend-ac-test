@@ -1,5 +1,5 @@
-import { DELETE, GET, PUT } from "@/const/request";
 const { prisma } = require("../../../const/db");
+import { DELETE, GET, PUT } from "@/const/request";
 
 const handler = async (req, res) => {
   if (req.method === GET) {
