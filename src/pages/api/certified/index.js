@@ -1,4 +1,5 @@
 const { prisma } = require("../../../const/db");
+import { GET, POST } from "@/const/request";
 
 const handler = async (req, res) => {
   if (req.method === GET) {
