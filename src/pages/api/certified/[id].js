@@ -2,8 +2,8 @@ const { prisma } = require("../../../const/db");
 import { DELETE, GET, PUT } from "@/const/request";
 
 const handler = async (req, res) => {
+  const { id } = req.query;
   if (req.method === GET) {
-    const { id } = req.query;
     try {
       const certified = await prisma.certified.findFirst({
         where: { id: parseInt(id) },
@@ -17,7 +17,6 @@ const handler = async (req, res) => {
     }
   }
   if (req.method === DELETE) {
-    const { id } = req.query;
     const certified = await prisma.certified.findFirst({
       where: { id: parseInt(id) },
     });
