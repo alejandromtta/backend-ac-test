@@ -6,7 +6,7 @@ const handler = async (req, res) => {
     const { id } = req.query;
     try {
       const certified = await prisma.certified.findFirst({
-        where: { document_number: parseInt(id) },
+        where: { id: parseInt(id) },
         include: { client: true },
       });
       return res
@@ -19,7 +19,7 @@ const handler = async (req, res) => {
   if (req.method === DELETE) {
     const { id } = req.query;
     const certified = await prisma.certified.findFirst({
-      where: { document_number: parseInt(id) },
+      where: { id: parseInt(id) },
     });
     try {
       if (!certified) {
@@ -46,7 +46,7 @@ const handler = async (req, res) => {
   if (req.method === PUT) {
     try {
       const certifiedUpdate = await prisma.certified.update({
-        where: { document_number: parseInt(id) },
+        where: { id: parseInt(id) },
         data: req.body,
       });
       return res?.status(200).json(certifiedUpdate);
