@@ -19,7 +19,7 @@ const handler = async (req, res) => {
       });
       return res?.status(200).json(newData);
     } catch (err) {
-      return res?.status(404).json(err);
+      return res?.status(404).json(newData);
     }
   }
   return res?.status(404).json({ response: "Metodo no soportado." });
