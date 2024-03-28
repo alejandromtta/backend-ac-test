@@ -48,9 +48,10 @@ const handler = async (req, res) => {
     }
   }
   if (req.method === PUT) {
+    const { id } = req.query;
     try {
       const clientUpdate = await prisma.client.update({
-        where: { document_number: parseInt(id) },
+        where: { id: parseInt(id) },
         data: req.body,
       });
       return res?.status(200).json(clientUpdate);
