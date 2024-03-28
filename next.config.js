@@ -4,7 +4,7 @@ const nextConfig = {
         return [
             {
                 // matching all API routes
-                source: "/api/:path*",
+                source: "/api/client/:path*",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "true" },
                     { key: "Access-Control-Allow-Origin", value: "https://ac-admin-nu.vercel.app" }, // replace this your actual origin
